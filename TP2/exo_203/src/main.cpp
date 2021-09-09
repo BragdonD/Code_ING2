@@ -14,6 +14,8 @@ int main(){
         std::cout << reals[i] << std::endl;
     }
 
+    delete[] reals;
+
     return 0;
 }
 
