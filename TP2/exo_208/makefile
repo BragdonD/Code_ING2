@@ -12,7 +12,7 @@ EXECDIR:= bin
 VPATH=src 
 EXEC=prog
 SRC= $(wildcard src/*.cpp)
-OBJECTS= main.o sousp.o min.o produit_matricielle.o
+OBJECTS= main.o sousp.o fonctions.o
 OBJ= $(addprefix $(OBJDIR)/,$(OBJECTS))
 
 all : $(EXECDIR)/$(EXEC)
@@ -28,13 +28,11 @@ $(EXECDIR)/$(EXEC): $(OBJ) | $(EXECDIR)
 $(EXECDIR):
 	mkdir $(EXECDIR)
 
-$(OBJDIR)/main.o: src/entete.h src/produit_matricielle.h
+$(OBJDIR)/main.o: src/entete.h src/fonctions.h
+
+$(OBJDIR)/fonctions.o: src/fonctions.h
 
 $(OBJDIR)/sousp.o: src/entete.h
-
-$(OBJDIR)/min.o: src/min.h
-
-$(OBJDIR)/produit_matricielle.o: src/produit_matricielle.h
 
 $(OBJDIR)/%.o: src/%.cpp | $(OBJDIR)
 	@$(CXX) -o $@ -c $< $(CXXFLAGS)
