@@ -5,7 +5,7 @@
 int main(){
     std::srand(std::time(NULL));
     int sizeMatA[2], sizeMatB[2];
-    matrix matrixA, matrixB;
+    matrix matrixA, matrixB, result;
 
     std::cout << "Write the size of the matrix A(n*m) : " << std::endl;
     std::cout << "Write the n component : " << std::endl;
@@ -31,8 +31,13 @@ int main(){
         printMatrix(matrixA);
         std::cout << "B matrix :" << std::endl;
         printMatrix(matrixB);
-        printMatrix(multiplyMatrixs(matrixA,matrixB));
+        result = multiplyMatrixs(matrixA,matrixB);
+        printMatrix(result);
+        destroyMatrix(result);
     }
+
+    destroyMatrix(matrixA);
+    destroyMatrix(matrixB);
 
     return 0;
 }

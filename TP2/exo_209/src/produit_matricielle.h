@@ -3,7 +3,6 @@
 
 #include <cstdlib>
 #include <ctime>
-#include "min.h"
 
 struct matrix
 {
