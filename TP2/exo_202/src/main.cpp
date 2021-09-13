@@ -13,14 +13,16 @@
 */
 
 int main(){
+    ///Declaration des variables permettant de recuperer les entrées utilisateurs
     int choice;
     std::string input;
     do{
-        ///entry of choice and validity
+        
         bool error(false);
-
+        ///Saisie du choix et verification de sa validité
         do{
             error = false;
+            ///Affichage du menu de choix
             menu();
             std::cout << "Your choice : ";
             choice = enterInteger();
@@ -28,7 +30,8 @@ int main(){
                 error = true;
             }
         }while(error);
-
+        ///Application en fonction du choix 
+        ///voir le menu pour voir a quoi correspond chaque cas
         if(choice == 1){
             input = enterString();
         }

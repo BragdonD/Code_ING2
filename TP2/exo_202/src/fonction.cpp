@@ -1,17 +1,18 @@
 #include <iostream>
 #include "fonction.h"
-
+///Fonction permettant de saisir une string et de la renvoyer en resultat
 std::string enterString(){
     std::string input;
     std::cout << "Write a string : " << std::endl;
     std::cin >> input;
     return input; 
 }
-
+///Fonction affichant la taille d'une string passée en paramètre
 void stringSize(std::string input){
     std::cout << "The input string size is " << input.size() << std::endl;
 }
-
+///Fonction comptant le nombre de voyelle dans une string passée en paramètre
+///retourne le nombre à la fin
 int countVowel(std::string input){
     int vowelCounter(0);
     for(int i=0; i<input.size(); i++){
@@ -21,33 +22,37 @@ int countVowel(std::string input){
     }
     return vowelCounter;
 }
-
+///fonction testant si l'input est une voyelle retourne le resultat sous la forme d'un booleen
 bool isVowel(char input){
     return (input == 'a' || input == 'A' || input == 'e' || input == 'E' || input == 'i' || input == 'I' || input == 'o' || input == 'O' || input == 'u' || input == 'U');
 }
-
+///fonction testant si l'input est une lettre retourne le résultat sous la forme d'un booleen
 bool isLetter(char input){
     return ((input >= 65 && input <= 90) || (input >= 97 && input <= 122));
 }
-
+///fonction testant si l'input est une consonne
 bool isConsonant(char input){
+    ///On test si la lettre est une lettre et si elle n'est pas une voyelle
     return (isLetter(input) && !isVowel(input));
 }
-
+///fonction comptant le nombre de consonnes dans une string envoyé en parametre
 int countConsonant(std::string input){
     int consonantCounter(0);
+    ///boucle tant que la fin de la string n'est pas atteinte
     for(int i=0; i<input.size(); i++){
+        ///test si le caractere est une consonne
         if(isConsonant(input[i])){
             consonantCounter++;
         }
     }
     return consonantCounter;
 }
-
+///fonction permettant d'effacer un caractere dans uen string passée en paramètre
 std::string deleteCaracter(std::string input, char caraToDelete){
+    ///utilisation de la méthode de la classe string permettant de supprimer un caractere de la chaine
     return input.erase(caraToDelete);
 }
-
+///
 std::string concatenateString(std::string string1, std::string string2){
     if(string1[string1.size()-1] == ' '){
         return string1 + string2;
