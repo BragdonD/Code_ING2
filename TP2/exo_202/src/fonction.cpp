@@ -52,7 +52,8 @@ std::string deleteCaracter(std::string input, char caraToDelete){
     ///utilisation de la méthode de la classe string permettant de supprimer un caractere de la chaine
     return input.erase(caraToDelete);
 }
-///
+///fonction permettant de concatener deux string passées en paramètre
+///test également si un espace est présent 
 std::string concatenateString(std::string string1, std::string string2){
     if(string1[string1.size()-1] == ' '){
         return string1 + string2;
