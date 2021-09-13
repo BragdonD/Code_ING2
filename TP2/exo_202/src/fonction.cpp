@@ -54,15 +54,19 @@ std::string deleteCaracter(std::string input, char caraToDelete){
 }
 ///fonction permettant de concatener deux string passées en paramètre
 ///test également si un espace est présent 
+///retourne le résultat de la concatenation
 std::string concatenateString(std::string string1, std::string string2){
+    //on test la valeur du dernier caractère de la première string
     if(string1[string1.size()-1] == ' '){
         return string1 + string2;
     }
     else{
+        //on rajoute l'espace si il n'est pas présent à la fin de la première string
         return string1 + ' ' + string2;
     }
 }
-
+///fonction permettant modifier le code ascci de la chaine de caractere en lui aditionnant +1
+///retourne la chaine modifiée
 std::string up1ToAsciiOfString(std::string input){
     std::string output;
 
@@ -79,7 +83,7 @@ std::string up1ToAsciiOfString(std::string input){
     }
     return output;
 }
-
+///sous programme affichant le menu du programme principal
 void menu(){
     std::cout << "Make a choice between the following propositions :" << std::endl;
     std::cout << "1. Type a string." << std::endl;

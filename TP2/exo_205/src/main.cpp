@@ -11,14 +11,17 @@
 */
 
 int main(){
+    ///Declarations des variables
     int a,b,c;
     float d,e,f;
+    ///Saisie des 3 entiers
     std::cout << "Write three integers : " << std::endl;
     a = enterInteger();
     b = enterInteger();
     c = enterInteger();
+    ///Appel de la procèdure indiquant laquel des 3 i=varaibles est la plus petite
     std::cout << "The minimum of the three integer is : " << findMin(a,b,c) << std::endl;
-    
+    ///meme chose mais pour des reels cette fois
     std::cout << "Write three reals : " << std::endl;
     d = enterReal();
     e = enterReal();

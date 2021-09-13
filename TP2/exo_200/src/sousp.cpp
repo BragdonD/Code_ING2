@@ -41,6 +41,7 @@ float enterReal(){
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         }
     }while(error);
+    //Validation de l'input
     std::cout << "You have typed a correct input" << std::endl;
     return real;
 }

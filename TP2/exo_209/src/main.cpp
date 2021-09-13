@@ -5,22 +5,28 @@
 void menu();
 
 int main(){
-    int choice;
+    ///declarations des variables
+    int choice;///choix action utilisateur
+    ///variables propre a la matrice
     matrix aMatrix;
     int matrixDim[2];
-
+    ///saisie des dimensions de la matrice
     std::cout << "A matrix of dimensions n*m" << std::endl;
     std::cout << "Type the dimension n :" << std::endl;
     matrixDim[0] = enterInteger();
     std::cout << "Type the dimension m :" << std::endl;
     matrixDim[1] = enterInteger();
-
+    ///creation de la matrice
     aMatrix = createMatrix(matrixDim[0],matrixDim[1]);
+    ///remplissage de la matrice
     fillMatrix(&aMatrix);
-
+    ///on réalise la boucle suivante tant que l'utilisateur ne décide pas de quitter
     do{
+        ///affichage du menu
         menu();
+        ///saisie du choix
         choice = enterInteger();
+        ///Operation en fonction du choix cf sous programme menu
         switch(choice){
             case 1:
                 printMatrix(aMatrix);
@@ -45,7 +51,7 @@ int main(){
 
     return 0;    
 }
-
+///procedure affichant le menu du programme principal
 void menu(){
     std::cout << "Make a choice between the bellow propositions : " << std::endl;
     std::cout << "1. Print the matrix." << std::endl;
