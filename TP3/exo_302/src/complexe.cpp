@@ -3,56 +3,64 @@
 #include <cmath>
 
 ///constructor
-Complex::Complex(): m_imgPart(0.0), m_realPart(0.0)
+Complex::Complex(): m_realPart(0.0), m_imgPart(0.0)
 {}
 Complex::Complex(float n_realPart, float n_imgPart): m_realPart(n_realPart), m_imgPart(n_imgPart)
 {}
 ///fonction pour afficher la forme cartésienne d'un nombre complex
-void Complex::printCartForm(){
-    std::cout << "The cartesian form of this complex number is : " << m_realPart << " + i" << m_imgPart << std::endl;
+void Complex::printCartForm() const{
+    std::cout << "The cartesian form of this complex number is : " << getRealPart() << " + i" << getImgPart() << std::endl;
 }
 ///fonction pour afficher la forme polaire d'un nombre complex
-void Complex::printPolForm(){
+void Complex::printPolForm() const{
     std::cout << "The polar form of this complex is : " << calculModule() << "(cos(" << calculTeta() << ") + sin(" << calculTeta() <<"))" << std::endl;
 }
 
-float Complex::calculModule(){
-    return std::sqrt(m_imgPart*m_imgPart + m_realPart*m_realPart);
+float Complex::calculModule() const{
+    return std::sqrt(getImgPart()*getImgPart() + getRealPart()*getRealPart());
 }
 
-void Complex::changeImgPart(float n_imgPart){
+void Complex::setImgPart(float n_imgPart){
     m_imgPart = n_imgPart;
 }
 
-void Complex::changeRealPart(float n_realPart){
+void Complex::setRealPart(float n_realPart){
     m_realPart = n_realPart;
 }
 
-Complex Complex::calculConjugate(){
-    Complex conjugate(m_realPart,-m_imgPart);
+Complex Complex::calculConjugate() const{
+    Complex conjugate(getRealPart(),-getImgPart());
     return conjugate;    
 }
 
-float Complex::calculTeta(){
-    return std::acos(m_realPart/calculModule());
+float Complex::calculTeta() const{
+    return std::acos(getRealPart()/calculModule());
 }
 
-Complex Complex::calculSum(Complex nb){
-    Complex resSum(m_realPart+nb.getRealPart(),m_imgPart+nb.getImgPart());
+Complex Complex::calculSum(Complex nb) const{
+    Complex resSum(getRealPart()+nb.getRealPart(),getImgPart()+nb.getImgPart());
     return resSum;
 }
 
-Complex Complex::calculProd(Complex nb){
-    Complex resProd((m_realPart*nb.getRealPart() - m_imgPart*nb.getImgPart()), (m_realPart*nb.getImgPart() + m_imgPart*nb.getRealPart()));
+Complex Complex::calculProd(Complex nb) const{
+    Complex resProd((getRealPart()*nb.getRealPart() - getImgPart()*nb.getImgPart()), (getRealPart()*nb.getImgPart() + getImgPart()*nb.getRealPart()));
     return resProd;
 }
-Complex Complex::calculProdScalaire(float real){
-    Complex resProdScal(m_realPart*real,m_imgPart*real);
+Complex Complex::calculProdScalaire(float real) const{
+    Complex resProdScal(getRealPart()*real,getImgPart()*real);
     return resProdScal;
 }
-int Complex::getRealPart(){
+float Complex::getRealPart() const{
     return m_realPart;
 }
-int Complex::getImgPart(){
+float Complex::getImgPart() const{
     return m_imgPart;
+}
+
+void Complex::printInformation() const{
+    printCartForm();
+    printPolForm();
+
+    std::cout << "its module is : " << calculModule() << std::endl;
+    std::cout << "its argument is : " << calculTeta() << std::endl;
 }

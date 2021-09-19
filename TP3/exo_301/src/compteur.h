@@ -7,10 +7,11 @@ class counter{
     counter();
     counter(int n_value);
     //modif
+    void setCounter(int n_value);
     void decrement(int n_incremt);
     void increment(int n_incremt);
     //getter
-    int getValue();
+    int getValue() const;
 
     private:
     int m_value;

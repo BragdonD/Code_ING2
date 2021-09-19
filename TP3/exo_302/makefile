@@ -12,7 +12,7 @@ EXECDIR:= bin
 VPATH=src 
 EXEC=prog
 SRC= $(wildcard src/*.cpp)
-OBJECTS= main.o rectangle.o sousp.o
+OBJECTS= main.o sousp.o complexe.o
 OBJ= $(addprefix $(OBJDIR)/,$(OBJECTS))
 
 all : $(EXECDIR)/$(EXEC)
@@ -28,11 +28,11 @@ $(EXECDIR)/$(EXEC): $(OBJ) | $(EXECDIR)
 $(EXECDIR):
 	mkdir $(EXECDIR)
 
-$(OBJDIR)/main.o: src/entete.h src/rectangle.h
+$(OBJDIR)/main.o: src/entete.h src/complexe.h
+
+$(OBJDIR)/complexe.o: src/complexe.h
 
 $(OBJDIR)/sousp.o: src/entete.h
-
-$(OBJDIR)/rectangle.o: src/rectangle.h
 
 $(OBJDIR)/%.o: src/%.cpp | $(OBJDIR)
 	@$(CXX) -o $@ -c $< $(CXXFLAGS)

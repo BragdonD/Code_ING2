@@ -32,8 +32,6 @@ $(OBJDIR)/main.o: src/compteur.h
 
 $(OBJDIR)/compteur.o: src/compteur.h
 
-$(OBJDIR)/produit_matricielle.o: src/produit_matricielle.h
-
 $(OBJDIR)/%.o: src/%.cpp | $(OBJDIR)
 	@$(CXX) -o $@ -c $< $(CXXFLAGS)
 
