@@ -1,5 +1,5 @@
 # Code_ING2
-Ce dossier représente l'intégralité des exercices de tp codé en C++ réalisé durant l'année d'ING
+Ce dossier représente l'intégralité des exercices de tp codé en C++ réalisé durant l'année d'ING2
 .
 
 Chaque exercice possède son propre makefile.
