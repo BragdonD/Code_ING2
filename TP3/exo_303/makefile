@@ -1,10 +1,10 @@
 DEBUG=yes
 CXX=g++
 ifeq ($(DEBUG),yes)
-	CXXFLAGS=-W -Wall -ansi -pedantic -g
+	CXXFLAGS= -W -Wall -ansi -pedantic -g -std=c++11
 	LDFLAGS=
 else
-	CXXFLAGS=-W -Wall -ansi -pedantic
+	CXXFLAGS= -W -Wall -ansi -pedantic -std=c++11
 	LDFLAGS=
 endif
 OBJDIR:= obj
@@ -12,7 +12,7 @@ EXECDIR:= bin
 VPATH=src 
 EXEC=prog
 SRC= $(wildcard src/*.cpp)
-OBJECTS= main.o rectangle.o sousp.o
+OBJECTS= main.o line.o sousp.o point.o
 OBJ= $(addprefix $(OBJDIR)/,$(OBJECTS))
 
 all : $(EXECDIR)/$(EXEC)
@@ -28,11 +28,13 @@ $(EXECDIR)/$(EXEC): $(OBJ) | $(EXECDIR)
 $(EXECDIR):
 	mkdir $(EXECDIR)
 
-$(OBJDIR)/main.o: src/entete.h src/rectangle.h
+$(OBJDIR)/main.o: src/entete.h src/line.h
 
 $(OBJDIR)/sousp.o: src/entete.h
 
-$(OBJDIR)/rectangle.o: src/rectangle.h
+$(OBJDIR)/point.o: src/point.h 
+
+$(OBJDIR)/line.o: src/line.h
 
 $(OBJDIR)/%.o: src/%.cpp | $(OBJDIR)
 	@$(CXX) -o $@ -c $< $(CXXFLAGS)
