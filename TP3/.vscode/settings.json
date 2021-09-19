@@ -47,6 +47,7 @@
         "iterator": "cpp",
         "numeric": "cpp",
         "random": "cpp",
-        "ranges": "cpp"
+        "ranges": "cpp",
+        "cstring": "cpp"
     }
 }
