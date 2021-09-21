@@ -2,7 +2,7 @@
 #define __PERSON_H__
 #pragma once
 
-#include <string>
+#include <cstring>
 
 class person{
     private:
