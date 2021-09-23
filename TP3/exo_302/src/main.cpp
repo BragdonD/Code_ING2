@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <iostream>
 #include "complexe.h"
 #include "entete.h"
 
