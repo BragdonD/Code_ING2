@@ -10,13 +10,12 @@ class school
     private:
        std::vector<student*> m_pTabStudent;
     public:
-        school(/* args */);
+        school();
         ~school();
         void AddStudent(student* n_student);
         std::vector<student*> getAllStudent() const;
+        void printStudent() const;
 };
-
-
 
 
 #endif

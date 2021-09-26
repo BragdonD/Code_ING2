@@ -28,4 +28,4 @@ class student
         void printInfo() const;
 };
 
-#endif;
+#endif
