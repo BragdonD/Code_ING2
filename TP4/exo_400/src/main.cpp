@@ -15,7 +15,6 @@ int main(){
     sort(&myTab);
     std::cout << "After randing : " << std::endl;
     printVectorTabInt(myTab);
-
     
     return 0;
 }
