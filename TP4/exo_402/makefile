@@ -12,7 +12,7 @@ EXECDIR:= bin
 VPATH=src 
 EXEC=prog
 SRC= $(wildcard src/*.cpp)
-OBJECTS= main.o hanoi.o
+OBJECTS= main.o hanoi.o sousp.o
 OBJ= $(addprefix $(OBJDIR)/,$(OBJECTS))
 
 all : $(EXECDIR)/$(EXEC)
@@ -28,7 +28,9 @@ $(EXECDIR)/$(EXEC): $(OBJ) | $(EXECDIR)
 $(EXECDIR):
 	mkdir $(EXECDIR)
 
-$(OBJDIR)/main.o: src/hanoi.h
+$(OBJDIR)/main.o: src/hanoi.h src/entete.h
+
+$(OBJDIR)/sousp.o: src/entete.h
 
 $(OBJDIR)/hanoi.o: src/hanoi.h 
 

@@ -49,6 +49,8 @@ int main(){
         default:
             std::cout << "Cette valeur n'est pas valide" << std::endl;
         };
+        std::cout << std::endl;
+        std::cout << "Size of the queue " << myPrinter.getQueueFile().size() << std::endl; 
     }while(choice!=6);
 
     return 0;

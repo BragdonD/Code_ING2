@@ -22,26 +22,30 @@ std::queue<file> printer::getQueueFile() const{
 
 void printer::printAllFiles(){
     std::queue<file> temp;
-    for(int i=0; i<getQueueFile().size(); i++){
+    int queueSize = getQueueFile().size();
+    for(int i=0; i<queueSize; i++){
         getFirstFile().printFile();
         temp.push(getFirstFile());
         RemoveFirstFile();
     }
-    for(int i=0; i<temp.size(); i++){
+    queueSize = temp.size();
+    for(int i=0; i<queueSize; i++){
         addFile(temp.front());
         temp.pop();
     }
 }
 
 void printer::deleteAllFiles(){
-    for(int i=0; i<getQueueFile().size(); i++){
+    int size = getQueueFile().size();
+    for(int i=0; i< size; i++){
         RemoveFirstFile();
     }
 }
 
 void printer::deleteFileById(std::string searchId){
     std::queue<file> temp;
-    for(int i=0; i<getQueueFile().size(); i++){
+    int queueSize = getQueueFile().size();
+    for(int i=0; i< queueSize; i++){
         if(getFirstFile().getId() == searchId){
             RemoveFirstFile();
             std::cout << "The filehas been deleted" << std::endl;
@@ -51,7 +55,8 @@ void printer::deleteFileById(std::string searchId){
             RemoveFirstFile();
         }
     }
-    for(int i=0; i<temp.size(); i++){
+    queueSize = temp.size();
+    for(int i=0; i<queueSize; i++){
         addFile(temp.front());
         temp.pop();
     }
@@ -59,7 +64,8 @@ void printer::deleteFileById(std::string searchId){
 
 void printer::deleteFileByName(std::string searchName){
     std::queue<file> temp;
-    for(int i=0; i<getQueueFile().size(); i++){
+    int queueSize = getQueueFile().size();
+    for(int i=0; i<queueSize; i++){
         if(getFirstFile().getName() == searchName){
             RemoveFirstFile();
             std::cout << "The filehas been deleted" << std::endl;
@@ -69,7 +75,8 @@ void printer::deleteFileByName(std::string searchName){
             RemoveFirstFile();
         }
     }
-    for(int i=0; i<temp.size(); i++){
+    queueSize = temp.size();
+    for(int i=0; i<queueSize; i++){
         addFile(temp.front());
         temp.pop();
     }

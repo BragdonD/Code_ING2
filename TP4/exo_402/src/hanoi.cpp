@@ -52,7 +52,7 @@ void hanoi::setTowerC(int n_value, int action){
 }
 
 bool hanoi::setNbDisk(int n_nbDisk){
-    if(m_nbDisk > 0){
+    if(n_nbDisk > 0){
         m_nbDisk = n_nbDisk;
         return true;
     }
