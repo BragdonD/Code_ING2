@@ -3,7 +3,24 @@
 #pragma once
 
 #include <string>
+#include <map>
 
+class database
+{
+    private:
+        std::map <std::string , std::string> m_dataBase;
+    public:
+        database(/* args */);
+        ~database();
+};
+
+database::database(/* args */)
+{
+}
+
+database::~database()
+{
+}
 
 
 #endif;
