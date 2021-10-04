@@ -15,29 +15,20 @@ std::map <std::string , std::string> database::getDataBase() const{
     return m_dataBase;
 }
 
-std::string* database::getPasswordFromLogin(std::string login) const{
+std::string database::getPasswordFromLogin(std::string login) const{
    
     if(getDataBase().find(login) != getDataBase().end()){
         auto iterator = getDataBase().find(login);
-        return &(iterator->second);
+        return iterator->second;
     }
     else{
-        return NULL;
+        return "vide";
     }
-}
-
-const std::string* database::getLoginFromPassword(std::string password) const{
-    for(const auto &it : getDataBase()){
-        if(it.second == password){
-            return &(it.first);
-        }
-    }
-    return NULL;
 }
 
 void database::printDataBase() const{
     for(const auto &it : getDataBase()){
-        std::cout << it.first << ' / ' << it.second << std::endl;
+        std::cout << it.first << " / " << it.second << std::endl;
     }
 }
 

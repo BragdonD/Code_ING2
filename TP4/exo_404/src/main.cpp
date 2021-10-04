@@ -23,35 +23,27 @@ int main(){
                     std::cin >> login;
                     std::cout << "Write the password  : " << std::endl;
                     std::cin >> password;
-                }while(correct = myDataBase.addNewLogin(login,password)==false);
+                    correct = myDataBase.addNewLogin(login,password);
+                }while(correct == false);
                 break;
             }
             case 2:
             {
-                std::string login, *password;
+                std::string login, password;
                 std::cout << "Write the login : " << std::endl;
                 std::cin >> login;
                 password = myDataBase.getPasswordFromLogin(login);
-                if(password == NULL){
+                if(password == "vide"){
                     std::cout << "The login is not present into the database"<<std::endl;
                 }
                 else{
-                    std::cout << "The password is : " << password << std::endl;
+                    std::cout << "The password is : " <<password << std::endl;
                 }
                 break;
             }   
             case 3:
             {
-                std::string *login, password;
-                std::cout << "Write the password: " << std::endl;
-                std::cin >> password;
-                login = myDataBase.getPasswordFromLogin(password);
-                if(login == NULL){
-                    std::cout << "The login is not present into the database"<<std::endl;
-                }
-                else{
-                    std::cout << "The password is : " << login << std::endl;
-                }
+                myDataBase.printDataBase();
                 break;
             }   
                   

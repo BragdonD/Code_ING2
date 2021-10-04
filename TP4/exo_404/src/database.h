@@ -14,9 +14,8 @@ class database
         ~database();
         bool addNewLogin(std::string n_login, std::string n_password);
         std::map <std::string , std::string> getDataBase() const;
-        std::string* getPasswordFromLogin(std::string login) const;
-        const std::string* getLoginFromPassword(std::string password) const;
+        std::string getPasswordFromLogin(std::string login) const;
         void printDataBase() const;
 };
 
-#endif;
+#endif
