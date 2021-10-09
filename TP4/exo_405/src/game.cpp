@@ -10,40 +10,11 @@ game::game()
     }
 }
 
-game::~game()
-{
-}
-
-void game::MoovePers(const personage& pers, int position){
-    int pos = findPosition(pers);
-    if(pos == -1){
-        std::cout << "The personage is not present in the game." << std::endl;
-    }
-    else{
-        RemovePersFromPos(pos, pers);
-        AddPersToPos(position, pers);
-    }
-}
-
-void game::RemovePersFromPos(int pos, const personage& pers){
-    auto iterator = getPlayground().find(pos);
-    iterator->second.erase(pers);
-}
+game::~game(){}
 
 void game::AddPersToPos(int pos, const personage& pers){
-    auto iterator = getPlayground().find(pos);
+    auto iterator = m_playground.find(pos);
     iterator->second.push_back(pers);
-}
-
-int game::findPosition(const personage& pers) const{
-    for(const auto &it : getPlayground()){
-        for(const auto &itPers : it.second){
-            if(itPers.getName() == pers.getName()){
-                return it.first;
-            }
-        }
-    }
-    return -1;
 }
 
 int game::getNbPersOnPos(int pos) const{
@@ -69,4 +40,12 @@ int game::getNbPersTotal() const{
 
 std::map<int, std::vector<personage>> game::getPlayground() const{
     return m_playground;
+}
+
+int game::getMinSize() const{
+    return m_minSize;
+}
+
+int game::getMaxSize() const{
+    return m_maxSize;
 }

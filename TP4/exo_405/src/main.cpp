@@ -35,20 +35,9 @@ int main(){
                 std::cout << "The number of personage at the position " << position << " is : " << MyGame.getNbPersOnPos(position) << std::endl;
                 break;
             }
-            case 4:{
-                std::string name;
-                int position;
-                std::cout << "Write the name of the personage to add : " << std::endl;
-                std::cin >> name; 
-                do{
-                    std::cout << "Write the new position where you wanna see him add : (0 to 200)" << std::endl;
-                    position = enterInteger();
-                }while(position<0 || position>200); 
-                MyGame.MoovePers(personage(name),position);
-                break;
-            }
+
         }
-    }while(choice!=5);
+    }while(choice!=4);
     return 0;
 }
 
@@ -57,6 +46,5 @@ void menu(){
     std::cout << "1. Add a personnage" << std::endl;
     std::cout << "2. Find the number of personnage in the game." << std::endl;
     std::cout << "3. Find the number of personnage on of the case (0 to 200)." << std::endl;
-    std::cout << "4. Moove a personnage to a position." << std::endl;
-    std::cout << "5. Leave" << std::endl;
+    std::cout << "4. Leave" << std::endl;
 }
