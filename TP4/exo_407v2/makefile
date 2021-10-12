@@ -1,7 +1,7 @@
 DEBUG=yes
 CXX=g++
 ifeq ($(DEBUG),yes)
-	CXXFLAGS=-W -Wall -ansi -pedantic -g -std=c++11
+	CXXFLAGS=-W -Wall -ansi -pedantic -g -std=c++17
 	LDFLAGS=
 else
 	CXXFLAGS=-W -Wall -ansi -pedantic
