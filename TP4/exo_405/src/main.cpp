@@ -33,6 +33,7 @@ int main(){
                     position = enterInteger();
                 }while(position<0 || position>200);
                 std::cout << "The number of personage at the position " << position << " is : " << MyGame.getNbPersOnPos(position) << std::endl;
+                MyGame.getNamePersOnPos(position);
                 break;
             }
 

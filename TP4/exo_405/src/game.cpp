@@ -30,6 +30,20 @@ int game::getNbPersOnPos(int pos) const{
     return 0;
 }
 
+void game::getNamePersOnPos(int pos) const{
+    for(const auto &it : getPlayground()){
+        if(it.first == pos){
+            int nb(0);
+            for(const auto &position : it.second){
+                nb++;
+                std::cout << "The name of the personage number " << nb << " is : " << position.getName() << std::endl; 
+            }
+            
+        }
+    }
+    
+}
+
 int game::getNbPersTotal() const{
     int nbPers(0);
     for(int i = getMinSize(); i<getMaxSize(); i++){

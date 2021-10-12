@@ -16,6 +16,7 @@ class game
         game();
         ~game();
         int getNbPersOnPos(int pos) const;
+        void getNamePersOnPos(int pos) const;
         int getNbPersTotal() const;
         int getMaxSize() const;
         int getMinSize() const;
