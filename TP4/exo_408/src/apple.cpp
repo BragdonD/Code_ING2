@@ -1,28 +1,12 @@
 #include <iostream>
 #include "apple.h"
 
-apple::apple(int n_X, int n_Y): m_X(n_X), m_Y(n_Y){}
-
 apple::apple(){}
-
 apple::~apple(){}
-
-char apple::getCara() const{
-    return m_cara;
-}
-
-int apple::getX() const{
-    return m_X;
-}
-
-int apple::getY() const{
-    return m_Y;
-}
-
-void apple::setX(int n_X){
-    m_X = n_X;
-}
-
-void apple::setY(int n_Y){
-    m_Y = n_Y;
-}
+void apple::setPosition(coordinates& _coord){m_coord = _coord;}
+void apple::setPosition(int _x, int _y){m_coord(_x,_y);}
+void apple::setCara(int _cara){m_cara=_cara;}
+int apple::getX() const{return m_coord[0];}
+int apple::gety() const{return m_coord[1];}
+coordinates apple::getCoord() const{return m_coord;}
+char apple::getCara() const{return m_cara;} 
