@@ -12,11 +12,11 @@ int main(){
     game SnakeGame;
     std::string moove = "left"; 
     SnakeGame.generateSnake();
-    sf::RenderWindow window(sf::VideoMode(RANGE_V*10, RANGE_H*10 + 100), "SFML works!");
+    sf::RenderWindow window(sf::VideoMode(RANGE_V*10, RANGE_H*10 + 100), "Snake - Thomas D");
     std::array<std::array<sf::RectangleShape,RANGE_H>,RANGE_V> tab;
     std::string text("Score = " + std::to_string(SnakeGame.getPoint()));
     sf::Font Font;
-    Font.loadFromFile("font/Roboto-Light.ttf");
+    Font.loadFromFile("Roboto-Light.ttf");
     sf::Text score(text,Font, 30);
     sf::Vector2f Position;
     Position.x = 50;
