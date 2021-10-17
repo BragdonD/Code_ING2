@@ -12,6 +12,7 @@ class triangle : public forme
     public:
         triangle() = default;
         triangle(float _width, float _height);
+        triangle(float _width, float _height, std::vector<float> _angles);
         triangle(float _width, float _height, sf::Color _color);
         ~triangle();
         void CalculArea();
@@ -24,6 +25,7 @@ class triangle : public forme
 triangle::triangle():m_sideWidth(3){}
 triangle::~triangle(){}
 triangle::triangle(float _width, float _height):m_sideWidth(3){}
+triangle::triangle(float _width, float _height, std::vector<float> _angles):m_angles(_angles){}
 triangle::triangle(float _width, float _height, sf::Color _color):m_sideWidth(3){}
 
 void triangle::CalculArea(){
@@ -39,9 +41,9 @@ void triangle::setSideWidth(float _width, int _index){
 }
 
 void triangle::CalculSideWidth(){
-    float hypot(0.0);
+    /*float hypot(0.0);
     hypot = pow((getWidth()/2),2)+pow((getheight()/2),2);
-    setSideWidth(hypot);
+    setSideWidth(hypot);*/
 }
 
 #endif
