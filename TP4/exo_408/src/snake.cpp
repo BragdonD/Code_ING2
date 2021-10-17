@@ -23,16 +23,16 @@ void snake::mooveBody(const std::string& _moove){
     if(testDirection(getDirection(), _moove)){
         m_direction = _moove;
         if(_moove == "left"){
-            m_body[0](getBodyPos(0)[0]-1, getBodyPos(0)[1]);
-        }
-        else if(_moove == "right"){
-            m_body[0](getBodyPos(0)[0]+1, getBodyPos(0)[1]);
-        }
-        else if(_moove == "up"){
             m_body[0](getBodyPos(0)[0], getBodyPos(0)[1]-1);
         }
-        else{
+        else if(_moove == "right"){
             m_body[0](getBodyPos(0)[0], getBodyPos(0)[1]+1);
+        }
+        else if(_moove == "up"){
+            m_body[0](getBodyPos(0)[0]-1, getBodyPos(0)[1]);
+        }
+        else{
+            m_body[0](getBodyPos(0)[0]+1, getBodyPos(0)[1]);
         }
     }
 }

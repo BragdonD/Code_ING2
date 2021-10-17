@@ -11,7 +11,7 @@ class snake
     private:
         std::vector<coordinates> m_body;
         int m_size = 0;
-        std::string m_direction = "right";
+        std::string m_direction = "left";
         char m_cara = '*';
         
     public:

@@ -35,7 +35,7 @@ $(OBJDIR)/myHash.o: src/myHash.h
 $(OBJDIR)/sousp.o: src/entete.h
 
 $(OBJDIR)/%.o: src/%.cpp | $(OBJDIR)
-	@$(CXX) -o $@ -c $< $(CXXFLAGS)
+	@$(CXX) -o $@ -c $< $(CXXFLAGS) $(LDFLAGS)
 
 $(OBJDIR):
 	mkdir $(OBJDIR)

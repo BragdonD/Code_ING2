@@ -1,11 +1,11 @@
 DEBUG=yes
 CXX=g++
 ifeq ($(DEBUG),yes)
-	CXXFLAGS = -Iinclude -W -Wall -ansi -pedantic -g -std=c++11
-	LDFLAGS = -L/usr/lib -lstdc++ -lm -lsfml-graphics -lsfml-window -lsfml-system
+	CXXFLAGS = -Iinclude -IC:\MINGW\mingw64\SFML_lib\SFML-2.5.1\include -W -Wall -ansi -pedantic -g -std=c++11
+	LDFLAGS = -LC:\MINGW\mingw64\SFML_lib\SFML-2.5.1\lib -lstdc++ -lm -lsfml-graphics -lsfml-window -lsfml-system
 else
 	CXXFLAGS = -W -Wall -ansi -pedantic -std=c++11
-	LDFLAGS = -L/usr/lib -lstdc++ -lm -lsfml-graphics -lsfml-window -lsfml-system
+	LDFLAGS = -L/usr/lib -lstdc++ -lm -lsfml-graphics -lsfml-window -lsfml-system 
 endif
 OBJDIR:=obj
 INCDIR:=include
@@ -29,7 +29,7 @@ else
 endif
 
 $(EXECDIR)/$(EXEC): $(OBJ) | $(EXECDIR)
-	$(CXX) $(CXXFLAGS) -o $@ $^
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 
 $(EXECDIR):
 	mkdir $(EXECDIR)
@@ -43,7 +43,7 @@ $(OBJDIR)/snake.o: $(INCDIR)/snake.h $(INCDIR)/coordinates.h
 $(OBJDIR)/apple.o: $(INCDIR)/apple.h $(INCDIR)/coordinates.h
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp | $(OBJDIR)
-	$(CXX) -o $@ -c $< $(CXXFLAGS)
+	$(CXX) -o $@ -c $< $(CXXFLAGS) $(LDFLAGS)
 
 $(OBJDIR):
 	mkdir $(OBJDIR)

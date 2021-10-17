@@ -6,13 +6,15 @@
 #define RANGE_H 52
 
 #include <windows.h>
+#include <array>
+#include <ctime>
 #include "snake.h"
 #include "apple.h"
 
 class game
 {
     private:
-        char m_plat[RANGE_V][RANGE_H];
+        std::array<std::array<char,RANGE_H>,RANGE_V> m_plat;
         char m_wallCara = '@';
         std::string m_direction;
         bool m_loose = false;
@@ -28,6 +30,7 @@ class game
         void CheckApples();
         int getPoint() const;
         char getWallCara() const;
+        std::array<std::array<char,RANGE_H>,RANGE_V> getTab() const;
         void setScore(int _score);
         void setLoose(int _loose);
         void setNbApple(int _nb);
