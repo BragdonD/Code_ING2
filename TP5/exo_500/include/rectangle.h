@@ -6,41 +6,29 @@
 
 class rectangle : public forme
 {
-    private:
-        float m_sideWidth;
     public:
-        rectangle() = default;
-        rectangle(float _width, float _height);
-        rectangle(float _width, float _height, sf::Color _color);
+        rectangle();
         ~rectangle();
         void CalculArea();
         void CalculPerimeter();
-        void setSideWidth(float _width);
-        void CalculSideWidth();
-        float getSideWidth() const;
+        void setAngles();
 };
 
 rectangle::rectangle(){}
 rectangle::~rectangle(){}
-rectangle::rectangle(float _width, float _height){}
-rectangle::rectangle(float _width, float _height, sf::Color _color){}
 
 void rectangle::CalculArea(){
     setArea(getheight()*getWidth());
 }
 
 void rectangle::CalculPerimeter(){
-    setPerimeter(getSideWidth()*4);
+    setPerimeter(getWidth()*2 + getheight()*2);
 }
 
-void rectangle::setSideWidth(float _width){
-    m_sideWidth = _width;
-}
-
-void rectangle::CalculSideWidth(){
-    float hypot(0.0);
-    hypot = pow((getWidth()/2),2)+pow((getheight()/2),2);
-    setSideWidth(hypot);
+void rectangle::setAngles(){
+    for(int i=0; i<4; i++){
+        m_angles[i] = 90;
+    }
 }
 
 #endif
