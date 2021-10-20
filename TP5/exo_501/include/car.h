@@ -6,11 +6,11 @@
 
 class car : public vehicule
 {
-private:
-    /* data */
-public:
-    car(/* args */);
-    ~car();
+    private:
+        
+    public:
+        car();
+        ~car();
 };
 
 car::car(/* args */)

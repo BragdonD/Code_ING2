@@ -7,34 +7,32 @@ class vehicule
 {
     protected:
         std::string m_id;
-        float m_maxSpeed = 130.0;
+        float m_maxSpeed;
+        int m_maxPers;
+        int m_pers;
         float m_speed;
         std::string m_color;
         std::string m_brand;
+         
     public:
         vehicule();
-        vehicule(std::string _id, std::string _color, std::string _brand);
-        vehicule(std::string _id, float _maxSpeed, std::string _color, std::string _brand);
+        vehicule(std::string _id, float _maxSpeed, int _maxPers, int _person, std::string _color, std::string _brand);
         ~vehicule();
         void setId(std::string _id);
         void setMaxSpeed(float _maxSpeed);
-        void setSpeedVehicule(float _speed);
+        bool setSpeedVehicule(float _speed);
         void setBrand(std::string _brand);
         void setColor(std::string _color);
+        void setMaxPerson(int _maxPers);
+        void setPerson(int _person);
+        bool addPerson();
         std::string getColor() const;
         std::string getId() const;
         std::string getbrand() const;
         float getSpeed() const;
         float getMaxSpeed() const;
+        int getMaxPerson() const;
+        int getPerson() const;
 };
-
-vehicule::vehicule(/* args */)
-{
-}
-
-vehicule::~vehicule()
-{
-}
-
 
 #endif
