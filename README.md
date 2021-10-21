@@ -6,5 +6,5 @@ Chaque exercice possède son propre makefile.
 
 Pour faire run le makefile utilisé la commande pour MINGW : mingw32-make
 
-Pour utiliser le projet en étant placé dans le dossier contenant le makefile, il suffit d'effectuer la commande : .\bin\prog
-  prog est le nom de l'exe de tous les exercices.
+Pour utiliser le projet en étant placé dans le dossier contenant le makefile, il suffit d'effectuer la commande : .\bin\exo_numeroExo
+
