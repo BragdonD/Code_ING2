@@ -16,7 +16,7 @@ class vehicule
          
     public:
         vehicule();
-        vehicule(std::string _id, float _maxSpeed, int _maxPers, int _person, std::string _color, std::string _brand);
+        vehicule(const std::string& _id, float _maxSpeed, int _maxPers, int _person, const std::string& _color, const std::string& _brand);
         ~vehicule();
         void setId(std::string _id);
         void setMaxSpeed(float _maxSpeed);
@@ -33,6 +33,7 @@ class vehicule
         float getMaxSpeed() const;
         int getMaxPerson() const;
         int getPerson() const;
+        friend std::ostream& operator<<(std::ostream& os, const vehicule& _vehicule);
 };
 
 #endif

@@ -1,6 +1,5 @@
 #ifndef __MOTO_H__
 #define __MOTO_H__
-#pragma once
 
 #include "vehicule.h"
 
@@ -10,16 +9,12 @@ private:
     /* data */
 public:
     moto(/* args */);
+    moto(const std::string& _id, int _person, const std::string& _color, const std::string& _brand);
     ~moto();
+    friend std::ostream& operator<<(std::ostream& os, const moto& _vehicule);
 };
 
-moto::moto(/* args */)
-{
-}
-
-moto::~moto()
-{
-}
-
+void addPersonToMoto(moto& _moto);
+void addMultiplePersonToMoto(moto& _moto, int _nb);
 
 #endif
