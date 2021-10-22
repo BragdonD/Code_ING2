@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1634812293 source:c:\users\33610\c++\code_ing2\tp_eval\tp_grp6\duclos_vidal_06\main.cpp
+	<iostream>
+	<ctime>
+	"vaisseau.h"
+
+1634812300 source:c:\users\33610\c++\code_ing2\tp_eval\tp_grp6\duclos_vidal_06\vaisseau.cpp
+	<iostream>
+	"vaisseau.h"
+
+1634812448 c:\users\33610\c++\code_ing2\tp_eval\tp_grp6\duclos_vidal_06\vaisseau.h
+	<string>
+	<vector>
+
+1634810766 c:\users\33610\c++\code_ing2\tp_eval\tp_grp6\duclos_vidal_06\pirate.h
+	<string>
+
+1634812576 source:c:\users\33610\c++\code_ing2\tp_eval\tp_grp6\duclos_vidal_06\methods.cpp
+	<iostream>
+	"vaisseau.h"
+
