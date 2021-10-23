@@ -1,5 +1,5 @@
-#ifndef __ICHTYOSAUR_H__
-#define __ICHTYOSAUR_H__
+#ifndef ICHTYOSAUR_H
+#define ICHTYOSAUR_H
 
 #include "coordinates.h"
 #include "dinosaur.h"
@@ -8,14 +8,14 @@
 class ichtyosaur : public dinosaur
 {
     private:
-        swim m_movements;
-    protected:
-        virtual void display(std::ostream& os);
+        swim *m_movements; 
+        void display(std::ostream& os);    
     public:
         ichtyosaur();
-        ichtyosaur(int _damages, int _speed, int _defense, int _x);
+        ichtyosaur(int _damages, int _speed, int _defense);
         ~ichtyosaur();
-        swim getMovements();
+        swim* getMovements();
+        
 };
 
 #endif

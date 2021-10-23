@@ -1,5 +1,5 @@
-#ifndef __WALK_H__
-#define __WALK_H__
+#ifndef WALK_H
+#define WALK_H
 
 #include "moove.h"
 #include "coordinates.h"
@@ -8,12 +8,8 @@ class walk : public moove
 {
     private:
     public:
-        walk();
-        ~walk();
+        walk():moove(0,0){}
+        ~walk(){}
 };
-
-walk::walk():moove(0,0){}
-walk::~walk(){}
-
 
 #endif

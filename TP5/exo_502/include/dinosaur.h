@@ -1,12 +1,11 @@
-#ifndef __DINOSAUR_H__
-#define __DINOSAUR_H__
+#ifndef DINOSAUR_H
+#define DINOSAUR_H
 
 #include "coordinates.h"
+#include <string>
 
 class dinosaur
-{
-    private:
-        virtual void display(std::ostream& os) const = 0;
+{       
     protected:
         int m_damages;
         int m_lp = 100;
@@ -14,6 +13,7 @@ class dinosaur
         int m_speed;
         int m_defense;
         coordinates m_coordinates;
+        virtual void display(std::ostream& os){}
     public:
         dinosaur();
         dinosaur(int _damages, int _speed, int _defense, const coordinates& _coord);
@@ -29,7 +29,7 @@ class dinosaur
         bool getState() const;
         int getLP() const;
         coordinates getCoordinate() const;
-        friend std::ostream& operator<<(std::ostream& os, const dinosaur& _dino);
+        friend std::ostream& operator<<(std::ostream& os, dinosaur& _dino);
 };
 
 #endif

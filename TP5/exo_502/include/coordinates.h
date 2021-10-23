@@ -1,5 +1,5 @@
-#ifndef __COORDINATES_H__
-#define __COORDINATES_H__
+#ifndef COORDINATES_H
+#define COORDINATES_H
 
 #include <iostream>
 

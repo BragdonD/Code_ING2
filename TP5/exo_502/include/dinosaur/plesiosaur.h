@@ -1,5 +1,5 @@
-#ifndef __PLESIOSAUR_H__
-#define __PLESIOSAUR_H__
+#ifndef PLESIOSAUR_H
+#define PLESIOSAUR_H
 
 #include "coordinates.h"
 #include "dinosaur.h"
@@ -9,16 +9,15 @@
 class plesiosaur : public dinosaur
 {
     private:
-        swim m_movementsInWater;
-        walk m_movementsOnGround;
-    protected:
-        virtual void display(std::ostream& os);
+        swim *m_movementsInWater;
+        walk *m_movementsOnGround;
+        void display(std::ostream& os); 
     public:
         plesiosaur();
-        plesiosaur(int _damages, int _speed, int _defense, int _x);
+        plesiosaur(int _damages, int _speed, int _defense);
         ~plesiosaur();
-        swim getMovementsInWater();
-        walk getMovementsOnGround();
+        swim* getMovementsInWater();
+        walk* getMovementsOnGround();
 };
 
 #endif

@@ -6,6 +6,7 @@ dinosaur::dinosaur(){}
 dinosaur::dinosaur(int _damages, int _speed, int _defense, const coordinates& _coord):
 m_damages(_damages), m_defense(_defense), m_speed(_speed), m_coordinates(_coord){}
 
+dinosaur::~dinosaur(){}
 
 void dinosaur::setDamage(int _dmg){m_damages=_dmg;}
 void dinosaur::setDefense(int _def){m_defense=_def;}
@@ -35,16 +36,16 @@ bool isOnGround(int X, int Y){
     else return false;
 }
 
-std::ostream& operator<<(std::ostream& os, const dinosaur& _dino){
+std::ostream& operator<<(std::ostream& os, dinosaur& _dino){
     _dino.display(os);
     if(isInAir(_dino.getCoordinate().getX(), _dino.getCoordinate().getY())){
-        os << "Position : Air";
+        os << "Position : Air" << std::endl;
     }
     else if(isInWater(_dino.getCoordinate().getX(), _dino.getCoordinate().getY())){
-        os << "Position : Water";
+        os << "Position : Water" << std::endl;
     }
     else{
-        os << "Position : Ground";
+        os << "Position : Ground" << std::endl;
     }
     if(_dino.getState()){
         os << "State : Alive" << std::endl;
