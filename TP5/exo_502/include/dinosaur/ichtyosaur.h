@@ -8,13 +8,12 @@
 class ichtyosaur : public dinosaur
 {
     private:
-        swim *m_movements; 
         void display(std::ostream& os);    
     public:
         ichtyosaur();
         ichtyosaur(int _damages, int _speed, int _defense);
         ~ichtyosaur();
-        swim* getMovements();
+        swim* getMovementsInWater();
         
 };
 

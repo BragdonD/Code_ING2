@@ -8,7 +8,6 @@
 class pterodactil : public dinosaur
 {
     private:
-        fly *m_movementsInAir;
         void display(std::ostream& os); 
     public:
         pterodactil();

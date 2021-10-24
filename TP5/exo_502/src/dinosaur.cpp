@@ -62,3 +62,7 @@ std::ostream& operator<<(std::ostream& os, dinosaur& _dino){
 
     return os;
 }
+
+walk* dinosaur::getMovementsOnGround(){return NULL;}
+swim* dinosaur::getMovementsInWater(){return NULL;}
+fly* dinosaur::getMovementsInAir(){return NULL;}

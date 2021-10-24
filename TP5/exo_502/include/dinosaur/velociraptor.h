@@ -9,13 +9,13 @@
 class velociraptor : public dinosaur
 {
     private:
-        walk *m_movements;
         void display(std::ostream& os); 
     public:
         velociraptor();
         velociraptor(int _damages, int _speed, int _defense);
         ~velociraptor();
-        walk* getMovements();
+        walk* getMovementsOnGround();
+        fly* getMovementsInAir();
 };
 
 #endif

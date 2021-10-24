@@ -5,7 +5,7 @@ plesiosaur::plesiosaur(){}
 plesiosaur::plesiosaur(int _damages, int _speed, int _defense):dinosaur(_damages,_speed,_defense,coordinates(5,-5)){}
 plesiosaur::~plesiosaur(){}
 
-swim* plesiosaur::getMovementsInWater(){return m_movementsInWater;}
+swim* plesiosaur::getMovementsInWater(){return m_movementInWater;}
 
 walk* plesiosaur::getMovementsOnGround(){return m_movementsOnGround;}
 

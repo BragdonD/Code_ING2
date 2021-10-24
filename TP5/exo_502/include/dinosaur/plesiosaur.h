@@ -9,8 +9,6 @@
 class plesiosaur : public dinosaur
 {
     private:
-        swim *m_movementsInWater;
-        walk *m_movementsOnGround;
         void display(std::ostream& os); 
     public:
         plesiosaur();

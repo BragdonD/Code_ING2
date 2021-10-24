@@ -18,6 +18,9 @@ int main(){
     std::cout << *aVelociraptor << std::endl;
     std::cout << *aPterodactile << std::endl;
 
+    if(aTriceratop->getMovementsOnGround() == NULL){
+        std::cout << "Error movements unauthorized !" << std::endl;
+    }
 
     delete aTriceratop;
     delete anIchtyosaure;
