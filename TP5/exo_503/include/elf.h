@@ -6,19 +6,18 @@
 class elf : public character
 {
     private:
-        /* data */
+        int m_munitions = 20;
+        int m_costAttack = 1;
     public:
-        elf(/* args */);
+        elf();
         ~elf();
+        elf(const std::string& _name);
+        bool attaquer(character* _charaToAttack);
+        void display(std::ostream& os) const;
+        void setMunitions(int _nbMunition);
+        void setCostAttack(int _cost);
+        int getMunitions() const;
+        int getCostAttack() const;
 };
-
-elf::elf(/* args */)
-{
-}
-
-elf::~elf()
-{
-}
-
 
 #endif

@@ -8,17 +8,11 @@ class enemy : public character
     private:
         /* data */
     public:
-        enemy(/* args */);
+        enemy();
+        enemy(const std::string& _name);
+        bool attaquer(character* _charaToAttack);
+        void display(std::ostream& os) const;
         ~enemy();
 };
-
-enemy::enemy(/* args */)
-{
-}
-
-enemy::~enemy()
-{
-}
-
 
 #endif

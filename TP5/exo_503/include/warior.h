@@ -6,18 +6,13 @@
 class warior : public character
 {
     private:
-        /* data */
+        
     public:
-        warior(/* args */);
+        warior();
+        warior(const std::string& _name);
         ~warior();
+        bool attaquer(character* _charaToAttack);
+        void display(std::ostream& os) const;
 };
-
-warior::warior(/* args */)
-{
-}
-
-warior::~warior()
-{
-}
 
 #endif
