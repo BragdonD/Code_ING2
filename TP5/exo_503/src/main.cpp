@@ -11,7 +11,6 @@ int main(){
     do{
         std::cout << *pers << std::endl;
         std::cout << *evil << std::endl;
-    
     }while(pers->attaquer(evil)!=false && evil->attaquer(pers)!=false);  
 
     delete pers;

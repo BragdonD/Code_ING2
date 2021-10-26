@@ -6,7 +6,7 @@
 class enemy : public character
 {
     private:
-        /* data */
+        
     public:
         enemy();
         enemy(const std::string& _name);
