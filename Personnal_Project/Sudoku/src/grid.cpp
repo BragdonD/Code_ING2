@@ -173,7 +173,7 @@ void grid::removeSomeNumbers(){
                             else if(x>8){x=8;}
                             if(y<0){y=0;}
                             else if(y>8){y=8;}
-                        }while(m_grid[x][y] = 0);
+                        }while(m_grid[x][y] == 0);
                         m_grid[x][y] = 0;
                         nbDelete++;
                     }
