@@ -27,6 +27,7 @@ class grid
         grid();
         ~grid();
         int generateGrid();
+        void removeSomeNumbers();
         void printGrid();
 };
 
