@@ -1,11 +1,11 @@
 DEBUG=yes
 CXX=g++
 ifeq ($(DEBUG),yes)
-	CXXFLAGS=-Iinclude -W -Wall -ansi -pedantic -g -std=c++11
-	LDFLAGS=
+	CXXFLAGS=-Iinclude -IC:\SFML_lib\SFML-2.5.1\include -W -Wall -ansi -pedantic -g -std=c++11
+	LDFLAGS= -LC:\SFML_lib\SFML-2.5.1\lib -lstdc++ -lm -lsfml-graphics -lsfml-window -lsfml-system
 else
-	CXXFLAGS=-Iinclude -W -Wall -ansi -pedantic -std=c++11
-	LDFLAGS=
+	CXXFLAGS=-Iinclude -IC:\SFML_lib\SFML-2.5.1\include -W -Wall -ansi -pedantic -std=c++11
+	LDFLAGS= -LC:\SFML_lib\SFML-2.5.1\lib -lstdc++ -lm -lsfml-graphics -lsfml-window -lsfml-system
 endif
 OBJDIR:=obj
 EXECDIR:=bin
@@ -15,7 +15,7 @@ DIRNAME:=$(notdir $(DIRPATH))
 SRCDIR:=src 
 EXEC:=$(DIRNAME)
 SRC:=$(wildcard src/*.cpp)
-OBJECTS:=main.o grid.o
+OBJECTS:=main.o grid.o graphic.o
 OBJ:=$(addprefix $(OBJDIR)/,$(OBJECTS))
 
 all : $(EXECDIR)/$(EXEC)
@@ -36,6 +36,8 @@ $(EXECDIR):
 $(OBJDIR)/main.o: $(INCDIR)/grid.h
 
 $(OBJDIR)/grid.o: $(INCDIR)/grid.h
+
+$(OBJDIR)/graphic.o: $(INCDIR)/grid.h
 
 $(OBJDIR)/%.o: src/%.cpp | $(OBJDIR)
 	$(CXX) -o $@ -c $< $(CXXFLAGS) $(LDFLAGS)
