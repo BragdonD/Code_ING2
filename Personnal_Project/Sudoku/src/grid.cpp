@@ -164,12 +164,16 @@ void grid::removeSomeNumbers(){
             int nbDelete(0);
             for(int k=i*3; k<(i+1)*3; k++){
                 for(int l=j*3; l<(j+1)*3; l++){
-                    if(nbDelete<=nbToDelete){
+                    if(nbDelete<nbToDelete){
                         int x,y;
                         do{
                             x = std::rand()%(((i+1)*3)-(i*3-1)+1)+(i*3-1);
                             y = std::rand()%(((j+1)*3)-(j*3-1)+1)+(j*3-1);
-                        }while(m_grid[x][y] == 0);
+                            if(x<0){x=0;}
+                            else if(x>8){x=8;}
+                            if(y<0){y=0;}
+                            else if(y>8){y=8;}
+                        }while(m_grid[x][y] = 0);
                         m_grid[x][y] = 0;
                         nbDelete++;
                     }
