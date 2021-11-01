@@ -37,8 +37,6 @@ $(OBJDIR)/main.o: $(INCDIR)/chessboard.h
 
 $(OBJDIR)/chessboard.o: $(INCDIR)/chessboard.h
 
-
-
 $(OBJDIR)/%.o: src/%.cpp | $(OBJDIR)
 	$(CXX) -o $@ -c $< $(CXXFLAGS) $(LDFLAGS)
 
