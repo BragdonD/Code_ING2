@@ -7,7 +7,11 @@ std::string Chess::ColorToString(Color color){
 
 Chess::chessboard::chessboard(){}
 
-Chess::chessboard::~chessboard(){}
+Chess::chessboard::~chessboard(){
+    for(const auto& it : m_board){
+        delete it.second;
+    }
+}
 
 void Chess::chessboard::initChessBoard(){
     int m(0);

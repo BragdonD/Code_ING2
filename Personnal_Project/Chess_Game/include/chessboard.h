@@ -26,8 +26,8 @@ namespace Chess{
             void drawOnWindow(sf::RenderWindow& window);
             friend std::ostream& operator<<(std::ostream& os, const chessboard& board);
     };
+
+    void dragAndDrop(sf::RenderWindow& window, pion* selectedPion);
 }
-
-
 
 #endif
