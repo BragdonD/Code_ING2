@@ -160,7 +160,7 @@ bool grid::checkValidity(){
 void grid::removeSomeNumbers(){
     for(int i=0; i<3; i++){
         for(int j=0; j<3; j++){
-            int nbToDelete((std::rand()%(6-4+1))+4);
+            int nbToDelete((std::rand()%(4-3+1))+4);
             int nbDelete(0);
             for(int k=i*3; k<(i+1)*3; k++){
                 for(int l=j*3; l<(j+1)*3; l++){

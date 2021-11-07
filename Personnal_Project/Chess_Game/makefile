@@ -4,20 +4,19 @@ ifeq ($(DEBUG),yes)
 	CXXFLAGS=-Iinclude -IC:\SFML-2.5.1\include -W -Wall -ansi -pedantic -g -std=c++11 
 	LDFLAGS = -LC:\SFML-2.5.1\lib -lstdc++ -lm -lsfml-graphics -lsfml-window -lsfml-system 
 else
-	CXXFLAGS = -W -Wall -ansi -pedantic -std=c++11
-	LDFLAGS =
+	CXXFLAGS=-Iinclude -IC:\SFML-2.5.1\include -W -Wall -ansi -pedantic -std=c++11
+	LDFLAGS = -LC:\SFML-2.5.1\lib -lstdc++ -lm -lsfml-graphics -lsfml-window -lsfml-system
 endif
 OBJDIR:=obj
-INCDIR:=include
-SRCDIR:=src
 EXECDIR:=bin
+INCDIR:=include
 DIRPATH:=$(CURDIR)
 DIRNAME:=$(notdir $(DIRPATH))
-VPATH:=src 
+SRCDIR:=src 
 EXEC:=$(DIRNAME)
 SRC:=$(wildcard src/*.cpp)
-OBJECTS= main.o forme.o losange.o
-OBJ= $(addprefix $(OBJDIR)/,$(OBJECTS))
+OBJECTS:=main.o chessboard.o
+OBJ:=$(addprefix $(OBJDIR)/,$(OBJECTS))
 
 all : $(EXECDIR)/$(EXEC)
 ifeq ($(DEBUG),yes)
@@ -34,11 +33,11 @@ $(EXECDIR)/$(EXEC): $(OBJ) | $(EXECDIR)
 $(EXECDIR):
 	mkdir $(EXECDIR)
 
-$(OBJDIR)/main.o: $(INCDIR)/losange.h $(INCDIR)/rectangle.h
+$(OBJDIR)/main.o: $(INCDIR)/chessboard.h
 
-$(OBJDIR)/losange.o: $(INCDIR)/losange.h
+$(OBJDIR)/chessboard.o: $(INCDIR)/chessboard.h
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.cpp | $(OBJDIR)
+$(OBJDIR)/%.o: src/%.cpp | $(OBJDIR)
 	$(CXX) -o $@ -c $< $(CXXFLAGS) $(LDFLAGS)
 
 $(OBJDIR):
