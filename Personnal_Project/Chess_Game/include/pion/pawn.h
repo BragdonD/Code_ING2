@@ -14,7 +14,6 @@ namespace Chess{
             ~pawn();
             void setFirstMoove(bool value = true);
             bool getFirstMoove();
-            void displayOnWindow(sf::RenderWindow& window);
             void ProposeMoove();
     };    
 }

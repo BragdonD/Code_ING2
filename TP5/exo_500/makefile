@@ -1,8 +1,8 @@
 DEBUG=yes
 CXX=g++
 ifeq ($(DEBUG),yes)
-	CXXFLAGS = -Iinclude -W -Wall -ansi -pedantic -g -std=c++11
-	LDFLAGS = 
+	CXXFLAGS=-Iinclude -IC:\SFML-2.5.1\include -W -Wall -ansi -pedantic -g -std=c++11 
+	LDFLAGS = -LC:\SFML-2.5.1\lib -lstdc++ -lm -lsfml-graphics -lsfml-window -lsfml-system 
 else
 	CXXFLAGS = -W -Wall -ansi -pedantic -std=c++11
 	LDFLAGS =
@@ -16,7 +16,7 @@ DIRNAME:=$(notdir $(DIRPATH))
 VPATH:=src 
 EXEC:=$(DIRNAME)
 SRC:=$(wildcard src/*.cpp)
-OBJECTS= main.o
+OBJECTS= main.o forme.o losange.o
 OBJ= $(addprefix $(OBJDIR)/,$(OBJECTS))
 
 all : $(EXECDIR)/$(EXEC)
@@ -35,6 +35,8 @@ $(EXECDIR):
 	mkdir $(EXECDIR)
 
 $(OBJDIR)/main.o: $(INCDIR)/losange.h $(INCDIR)/rectangle.h
+
+$(OBJDIR)/losange.o: $(INCDIR)/losange.h
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp | $(OBJDIR)
 	$(CXX) -o $@ -c $< $(CXXFLAGS) $(LDFLAGS)

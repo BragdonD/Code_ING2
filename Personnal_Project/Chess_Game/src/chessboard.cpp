@@ -40,6 +40,11 @@ void Chess::chessboard::initChessBoard(){
 }
 
 void Chess::chessboard::drawOnWindow(sf::RenderWindow& window){
+    sf::Vector2u windowSize = window.getSize();
+    windowSize.x -= DIM_CHESSBOARD * SIZE_CASE;
+    windowSize.y -= DIM_CHESSBOARD * SIZE_CASE;
+    windowSize.x /= 2;
+    windowSize.y /= 2;
     int m(0);
     for(int i = 0; i < DIM_CHESSBOARD; i++){
         for(int j = 0; j < DIM_CHESSBOARD; j++){
@@ -50,7 +55,7 @@ void Chess::chessboard::drawOnWindow(sf::RenderWindow& window){
             else{
                 rect.setFillColor(sf::Color::Black);
             }
-            rect.setPosition(SIZE_CASE*i, SIZE_CASE*j);
+            rect.setPosition(windowSize.x + SIZE_CASE*i, windowSize.y + SIZE_CASE*j);
             window.draw(rect);
             m++;
         }

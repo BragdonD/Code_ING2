@@ -2,7 +2,7 @@
 #include "chessboard.h"
 
 int main(){
-    sf::RenderWindow window(sf::VideoMode(DIM_CHESSBOARD*SIZE_CASE, DIM_CHESSBOARD*SIZE_CASE),"Chess");
+    sf::RenderWindow window(sf::VideoMode::getDesktopMode(),"Chess",sf::Style::Fullscreen);
     Chess::chessboard chessBoard;
 
     chessBoard.initChessBoard();
@@ -10,7 +10,7 @@ int main(){
     while (window.isOpen())
     {
         sf::Event event;
-        window.clear();
+        window.clear(sf::Color(255,0,0));
 
         chessBoard.drawOnWindow(window);
 
