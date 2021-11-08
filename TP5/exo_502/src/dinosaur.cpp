@@ -66,3 +66,5 @@ std::ostream& operator<<(std::ostream& os, dinosaur& _dino){
 walk* dinosaur::getMovementsOnGround(){return NULL;}
 swim* dinosaur::getMovementsInWater(){return NULL;}
 fly* dinosaur::getMovementsInAir(){return NULL;}
+
+void dinosaur::setCoordinate(const coordinates& _coord){m_coordinates = _coord;}

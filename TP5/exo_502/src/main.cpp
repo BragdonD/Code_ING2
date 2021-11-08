@@ -5,6 +5,8 @@
 #include "dinosaur/pterodactil.h"
 #include "dinosaur/velociraptor.h"
 
+void MooveForward(dinosaur *_dino, int _max);
+
 int main(){
     dinosaur *aTriceratop = new triceratop(3,1,15);
     dinosaur *anIchtyosaure = new ichtyosaur(15,2,5);
@@ -21,6 +23,8 @@ int main(){
     if(aTriceratop->getMovementsOnGround() == NULL){
         std::cout << "Error movements unauthorized !" << std::endl;
     }
+    MooveForward(aTriceratop, 20);
+    std::cout << *aTriceratop << std::endl;
 
     delete aTriceratop;
     delete anIchtyosaure;
@@ -29,4 +33,10 @@ int main(){
     delete aPterodactile;
 
     return 0;
+}
+
+void MooveForward(dinosaur *_dino, int _max){
+    coordinates temp = _dino->getCoordinate();
+    _dino->getMovementsOnGround()->GoForward(_dino->getSpeed(), temp, _max);
+    _dino->setCoordinate(temp);
 }

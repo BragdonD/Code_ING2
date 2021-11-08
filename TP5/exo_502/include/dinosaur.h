@@ -30,6 +30,7 @@ class dinosaur
         void setSpeed(int _speed);
         void SetLP(int _LP);
         void setState(bool _state);
+        void setCoordinate(const coordinates& _coord);
         int getSpeed() const;
         int getDefense() const;
         int getDamage() const;

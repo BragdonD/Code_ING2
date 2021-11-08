@@ -9,16 +9,19 @@ int moove::getPlafond() const {return m_plafond;}
 int moove::GetMinToMoove() const {return m_minToMoove;}
 
 void moove::GoForward(int _speed, coordinates& _coord, int _max){
-    if(_coord.getX()<_max){
+    std::cout << "test" <<std::endl;
+    if(_coord.getX()<=_max){
         if(m_minToMoove>0){
-            if(_coord.getX()>=m_minToMoove)
+            std::cout << "test2" <<std::endl;
+            if(_coord.getY()>=m_minToMoove)
                 _coord.setX(_coord.getX()+_speed);
             else
                 std::cout << "The dinosaur cannot moove this way because it is not in this area." << std::endl;
         }
         else{
-            if(_coord.getX()<=m_minToMoove)
-                _coord.setX(_coord.getX()+_speed);
+            if(_coord.getY()<=m_minToMoove){
+                std::cout << "test3" <<std::endl;
+                _coord.setX(_coord.getX()+_speed);}
             else
                 std::cout << "The dinosaur cannot moove this way because it is not in this area." << std::endl;
         }
